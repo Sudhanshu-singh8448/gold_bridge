@@ -1,0 +1,24 @@
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: goldbridge_db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: goldbridge_db
+      POSTGRES_USER: goldbridge
+      POSTGRES_PASSWORD: goldbridge_pass
+    volumes:
+      - goldbridge_pgdata:/var/lib/postgresql/data
+      - ./server/db/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U goldbridge -d goldbridge_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  goldbridge_pgdata:
+    driver: local
