@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 
@@ -35,6 +35,7 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <footer style={{ background: 'var(--color-navy-600)', color: 'rgba(255,255,255,0.8)' }}>
       {/* Newsletter Banner */}
@@ -49,14 +50,14 @@ export default function Footer() {
           Join 5,000+ goldsmiths already using GoldBridge ERP
         </p>
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', maxWidth: '480px', margin: '0 auto', flexWrap: 'wrap' }}>
-          <input
+          {/* <input
             placeholder="Enter your email"
             style={{
               flex: 1, minWidth: '240px', padding: '14px 20px', borderRadius: 'var(--radius-full)',
               border: 'none', fontSize: '15px', outline: 'none',
             }}
-          />
-          <button className="btn btn-dark btn-lg">Get Free Demo</button>
+          /> */}
+          <button className="btn btn-dark btn-lg" onClick={()=>navigate("/login")}>Get Free Demo</button>
         </div>
       </div>
 

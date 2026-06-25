@@ -67,7 +67,7 @@ export default function FeaturesPage() {
     const ctx = gsap.context(() => {
       gsap.from('.feature-section-card', {
         scrollTrigger: { trigger: '.features-grid', start: 'top 80%' },
-        y: 50, opacity: 0, duration: 0.7, stagger: 0.15,
+        y: 50, opacity: 1, duration: 0.7, stagger: 0.15,
       })
     }, ref)
     return () => ctx.revert()
@@ -133,8 +133,8 @@ export default function FeaturesPage() {
                   minHeight: '300px', border: `1px solid ${feature.color}20`,
                 }}>
                   <div style={{ textAlign: 'center', color: feature.color }}>
-                    <div style={{ fontSize: '64px', marginBottom: '12px', opacity: 0.3 }}>{feature.icon}</div>
-                    <div style={{ fontSize: '14px', fontWeight: 600, opacity: 0.5 }}>Feature Preview</div>
+                    <div style={{ fontSize: '64px', marginBottom: '12px', opacity: 0.5 }}>{feature.icon}</div>
+                    <div style={{ fontSize: '14px', fontWeight: 600, opacity: 0.8 }}>Feature Preview</div>
                   </div>
                 </div>
               </div>
