@@ -56,40 +56,40 @@ export default function HomePage() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Hero animation
-      gsap.from('.hero-badge', { y: 20, opacity: 0, duration: 0.6, delay: 0.2 })
-      gsap.from('.hero-title', { y: 40, opacity: 0, duration: 0.8, delay: 0.4 })
-      gsap.from('.hero-subtitle', { y: 30, opacity: 0, duration: 0.7, delay: 0.6 })
-      gsap.from('.hero-cta', { y: 20, opacity: 0, duration: 0.6, delay: 0.8 })
-      gsap.from('.hero-visual', { y: 50, opacity: 0, duration: 0.9, delay: 1 })
+      gsap.from('.hero-badge', { y: 20, opacity: 1, duration: 0.6, delay: 0.2 })
+      gsap.from('.hero-title', { y: 40, opacity: 1, duration: 0.8, delay: 0.4 })
+      gsap.from('.hero-subtitle', { y: 30, opacity: 1, duration: 0.7, delay: 0.6 })
+      gsap.from('.hero-cta', { y: 20, opacity: 1, duration: 0.6, delay: 0.8 })
+      gsap.from('.hero-visual', { y: 50, opacity: 1, duration: 0.9, delay: 1 })
 
       // Benefits cards
       gsap.from('.benefit-card', {
         scrollTrigger: { trigger: '.benefits-section', start: 'top 80%' },
-        y: 40, opacity: 0, duration: 0.6, stagger: 0.1,
+        y: 40, opacity: 1, duration: 0.6, stagger: 0.1,
       })
 
       // Features
       gsap.from('.feature-card', {
         scrollTrigger: { trigger: '.features-section', start: 'top 80%' },
-        y: 40, opacity: 0, duration: 0.6, stagger: 0.1,
+        y: 40, opacity: 1, duration: 0.6, stagger: 0.1,
       })
 
       // Stats counter
       gsap.from('.stat-item', {
         scrollTrigger: { trigger: '.stats-section', start: 'top 80%' },
-        y: 30, opacity: 0, duration: 0.6, stagger: 0.15,
+        y: 30, opacity: 1, duration: 0.6, stagger: 0.15,
       })
 
       // Industries
       gsap.from('.industry-card', {
         scrollTrigger: { trigger: '.industries-section', start: 'top 80%' },
-        scale: 0.8, opacity: 0, duration: 0.5, stagger: 0.1,
+        scale: 0.8, opacity: 1, duration: 0.5, stagger: 0.1,
       })
 
       // Testimonials
       gsap.from('.testimonial-card', {
         scrollTrigger: { trigger: '.testimonials-section', start: 'top 80%' },
-        y: 40, opacity: 0, duration: 0.6, stagger: 0.15,
+        y: 40, opacity: 1, duration: 0.6, stagger: 0.15,
       })
     }, heroRef)
 
