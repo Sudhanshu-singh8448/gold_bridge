@@ -19,6 +19,11 @@ npm install --production=false
 echo "🔨 Building frontend..."
 npm run build
 
+# Fix permissions so Nginx (www-data) can read the dist folder
+echo "🔒 Setting file permissions..."
+chmod 755 "$HOME"
+chmod -R 755 "$APP_DIR/dist"
+
 # Install backend dependencies
 echo "📦 Installing backend dependencies..."
 cd server
